@@ -23,16 +23,23 @@ function creerMur( x, y, cassable){
   var murElt = document.createElement('div');
   murElt.style.width = allSize;
   murElt.style.height = allSize;
-  conteneurElt.appendChild(murElt);
-
-  y.style.top = "100px";
-  x.style.right = "100px"
-  cassable.style.display = "block";
-if (cassable) {
-  cassable.classList.add("mur-cassable");
+  murElt.style.position = "absolute";
+  murElt.style.top = x;
+  murElt.style.right = y;
+  murElt.style.display = "block";
+if (cassable){
+  murElt.classList.add("mur-cassable");
 } else {
-  cassable.classList.add("mur-incassable");
+  murElt.classList.add("mur-incassable");
 }
+
+conteneurElt.appendChild(murElt);
+
 
   return conteneurElt;
 };
+
+
+creerMur("40px", "40px", true);
+creerMur("40px", "160px", true);
+creerMur("40px", "200px", true);
