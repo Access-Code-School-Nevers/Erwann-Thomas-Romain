@@ -10,7 +10,7 @@
   <body>
     <section id="bomberman">
       <div id="conteneur">
-        <p id="player" onmouseover="animateScript()" onmouseout="stopAnimate()"></p>
+        <div id="player" onmouseover="animateScript()" onmouseout="stopAnimate()"></div>
       </div>
     </section>
 
