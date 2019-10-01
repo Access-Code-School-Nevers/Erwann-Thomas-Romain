@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <title>Bomberman</title>
     <link rel="stylesheet" href="style.css">
+
   </head>
   <body>
-    <div id="Conteneur">
+    <div id="conteneur">
 
     </div>
 
