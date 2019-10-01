@@ -1,6 +1,6 @@
 var player = document.getElementById('player');
-var moveSize = 10;
-var parentRect = document.getElementById('Conteneur').getBoundingClientRect();
+var moveSize = 4;
+var parentRect = document.getElementById('conteneur').getBoundingClientRect();
 var childRect;
 
 
