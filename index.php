@@ -7,12 +7,15 @@
 
   </head>
   <body>
-    <div id="conteneur">
+<section id="Bomberman">
+  <div id="conteneur">
 
-    </div>
+  </div>
+</section>
 
 
-    <script src="script.js" charset="utf-8"></script>
-    <script src="terrain.js" charset="utf-8"></script>
+
+    <script src="js/script.js" charset="utf-8"></script>
+    <script src="js/terrain.js" charset="utf-8"></script>
   </body>
 </html>

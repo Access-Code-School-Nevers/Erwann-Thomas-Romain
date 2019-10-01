@@ -1,6 +1,5 @@
 #conteneur{
-    border: 25px solid grey;
-    background-color: #000000;
+    border: 25px solid #41992a;
     background-image: url("img/sol.png");
     background-repeat: repeat;
 }
