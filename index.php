@@ -4,14 +4,22 @@
     <meta charset="utf-8">
     <title>Bomberman</title>
     <link rel="stylesheet" href="style.css">
+
   </head>
   <body>
-    <div id="Conteneur">
-
+<section id="bomberman">
+  <div id="conteneur">
+    <div id="player">
+      <img src="./img/don_idle.png" alt="player">
     </div>
+  </div>
+</section>
 
 
-    <script src="script.js" charset="utf-8"></script>
-    <script src="terrain.js" charset="utf-8"></script>
+
+    <script src="js/script.js" charset="utf-8"></script>
+    <script src="js/terrain.js" charset="utf-8"></script>
+    <script src="js/player.js" charset="utf-8"></script>
+
   </body>
 </html>
