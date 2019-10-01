@@ -9,11 +9,11 @@ body{
 }
 #conteneur{
   top: 55px;
-  border: 25px solid #1b1b1b;
+  /* border: 25px solid #1b1b1b; */
   background-image: url("img/sol.png");
   background-size: 32px;
   background-repeat: repeat;
-  box-shadow: 0px 0px 10px 7px #adadad;
+  /* box-shadow: 0px 0px 10px 7px #adadad; */
   position:relative;
 }
 
@@ -22,18 +22,12 @@ display: flex;
 justify-content: center;
 }
 #player {
-<<<<<<< HEAD
-  z-index: 500;
-  position:absolute;
-  width: 20px;
-  height: 20px;
-=======
+  z-index: 900;
   position:absolute;
   width: 40px;
   height: 40px;
   background: url('img/player_x.png') no-repeat 0px 0px;
   background-size: cover;
->>>>>>> 458b6d79c6243ed1209dd8d0a0bddad0b62a956b
 }
 
 .mur-cassable{

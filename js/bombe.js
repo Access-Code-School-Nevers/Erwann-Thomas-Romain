@@ -11,18 +11,19 @@ function addBomb(perso) {
     setTimeout(function() { // Changement du sprite bombe3
       childBomb.style.backgroundPosition = (allSize - (allSize*3)) + "px 0px";
       setTimeout(function() {
+				if (perso.id == 'player') player.canBomb = true;
         childBomb.id = "explo";
-					childBomb.style.backgroundImage = "url('img/explo.png')";
-					childBomb.style.backgroundPosition = "0px 0px";
-					setTimeout(function() {
-						 childBomb.style.backgroundPosition = (allSize - (allSize*2)) + "px 0px";
-						 setTimeout(function() {
-								 childBomb.style.backgroundPosition = (allSize - (allSize*3)) + "px 0px";
-								 setTimeout(function() {
-									 childBomb.remove();
-								 }, 200);
-						 }, 200);
+				childBomb.style.backgroundImage = "url('img/explo.png')";
+				childBomb.style.backgroundPosition = "0px 0px";
+				setTimeout(function() {
+					 childBomb.style.backgroundPosition = (allSize - (allSize*2)) + "px 0px";
+					 setTimeout(function() {
+							 childBomb.style.backgroundPosition = (allSize - (allSize*3)) + "px 0px";
+							 setTimeout(function() {
+								 childBomb.remove();
+							 }, 200);
 					 }, 200);
+				 }, 200);
       }, 700);
     }, 700);
   }, 700);

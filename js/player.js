@@ -31,42 +31,53 @@ function animateScript() {
 } //end of animateScript()
 
 
+// var position = 0;
+// const interval = 100;
+// const diff = 40;
+// const max = 400;
+// var animePlayer = setInterval(() => {
+//       document.getElementById("player").style.backgroundPosition = position + 'px 0px
+//       position += diff;
+//       if (position > max) position = 0;
+// }, interval);
+
 // Movements
+var canBomb = true;
 var player = document.getElementById('player');
 var moveSize = 40;
-var parentRect = document.getElementById('conteneur').getBoundingClientRect();
-var childRect = document.getElementById('player').getBoundingClientRect();
 
 var touches = [];
 
 setInterval(loopMove, 200);
 function loopMove(){
   if (touches.includes('ArrowUp')) {
-    if(childRect.top > parentRect.top)
+    if(player.offsetTop > 0)
       player.style.top = (player.offsetTop - moveSize)+"px";
   }
   if (touches.includes('ArrowDown')) {
-    if(childRect.bottom < parentRect.bottom)
+    if(player.offsetTop + player.offsetHeight < conteneurElt.offsetHeight)
       player.style.top = (player.offsetTop + moveSize)+"px";
   }
   if (touches.includes('ArrowRight')) {
-    if(childRect.right < parentRect.right)
+    if(player.offsetLeft + player.offsetWidth < conteneurElt.offsetWidth)
       player.style.left = (player.offsetLeft + moveSize)+"px";
   }
   if (touches.includes('ArrowLeft')) {
-   if(childRect.left > parentRect.left)
-     player.style.left = (player.offsetLeft - moveSize)+"px";
+    if(player.offsetLeft > 0)
+      player.style.left = (player.offsetLeft - moveSize)+"px";
   }
 }
 function bomb() {
-  if (touches.includes('Space')) {
-    var newBomb = {};
-    newBomb.__proto__ = addBomb.prototype;
-    newBomb.constructor = addBomb;
-    newBomb.constructor(player);
-  }
+  canBomb = false;
+  var newBomb = {};
+  newBomb.__proto__ = addBomb.prototype;
+  newBomb.constructor = addBomb;
+  newBomb.constructor(player);
 }
 
 document.addEventListener('keydown', function(event) { touches.push(event.code); });
 document.addEventListener('keyup', function(event) { touches = touches.filter(e => e !== event.code); });
-document.addEventListener('keypress', function(event) { bomb() });
+document.addEventListener('keypress', function(event) {
+  console.log(canBomb);
+  if (canBomb) bomb();
+});

@@ -1,15 +1,15 @@
 var conteneurElt = document.getElementById('conteneur');
-var sectionElt = document.getElementById('bomberman')
-var largeur = 70;
-var hauteur = 35;
+var sectionElt = document.getElementById('bomberman');
+var largeur = 30;
+var hauteur = 15;
 
 var allSize = 40;
 
 var ennemy = [];
 var wall = [];
 
-conteneurElt.style.width = (largeur * 16) + "px";
-conteneurElt.style.height = (hauteur * 16) + "px";
+conteneurElt.style.width = (largeur * 40) + "px";
+conteneurElt.style.height = (hauteur * 40) + "px";
 conteneurElt.style.borderRadius = "5px";
 
 sectionElt.style.display = "flex";
