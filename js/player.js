@@ -8,9 +8,9 @@ function stopAnimate() {
 
 function animateScript() {
 
-  var position = 86; //start position for the image slicer
-  const interval = 150; //100 ms of interval for the setInterval()
-  const diff = 86; //diff as a variable for position offset
+  var position = 40; //start position for the image slicer
+  const interval = 100; //100 ms of interval for the setInterval()
+  const diff = 40; //diff as a variable for position offset
 
   tID = setInterval(() => {
 
@@ -18,14 +18,14 @@ function animateScript() {
       `-${position}px 0px`;
     //we use the ES6 template literal to insert the variable "position"
 
-    if (position < 849) {
+    if (position < 955) {
       position = position + diff;
     }
-    //we increment the position by 86 each time
+    //we increment the position by 40 each time
     else {
-      position = 86;
+      position = 40;
     }
-    //reset the position to 86px, once position exceeds 1536px
+    //reset the position to 40px, once position exceeds 1536px
 
   }, interval); //end of setInterval
 } //end of animateScript()
@@ -33,7 +33,7 @@ function animateScript() {
 
 // Movements
 var player = document.getElementById('player');
-var moveSize = 4;
+var moveSize = 40;
 var parentRect = document.getElementById('conteneur').getBoundingClientRect();
 var childRect;
 
@@ -48,6 +48,7 @@ document.addEventListener('keydown', function(event) {
   else if (event.code == 'ArrowRight') {
     if(childRect.right < parentRect.right)
       player.style.left = (player.offsetLeft + moveSize)+"px";
+      animateScript();
   }
   else if (event.code == 'ArrowDown') {
     if(childRect.bottom < parentRect.bottom)
