@@ -10,9 +10,7 @@
   <body>
     <section id="bomberman">
       <div id="conteneur">
-        <div id="player">
-          <img src="./img/don_idle.png" alt="player">
-        </div>
+        <p id="player" onmouseover="animateScript()" onmouseout="stopAnimate()"></p>
       </div>
     </section>
 
