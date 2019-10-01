@@ -6,16 +6,26 @@ function stopAnimate() {
 } //end of stopAnimate()
 
 
-function animateScript() {
-
+function animateScript(direction) {
+  var row = 0; // choosing a row for a different animation
   var position = 40; //start position for the image slicer
   const interval = 100; //100 ms of interval for the setInterval()
   const diff = 40; //diff as a variable for position offset
 
+  if (direction == "left") {
+    document.getElementById("player").style.transform = "scaleX(-1)";
+  } else if (direction == "right") {
+    document.getElementById("player").style.transform = "scaleX(1)";
+  } else if (direction == "up") {
+    row =
+  } else if (direction == "down") {
+
+    }
+
   tID = setInterval(() => {
 
     document.getElementById("player").style.backgroundPosition =
-      `-${position}px 0px`;
+      `-${position}px ${row}px`;
     //we use the ES6 template literal to insert the variable "position"
 
     if (position < 400) {
@@ -62,11 +72,12 @@ function loopMove(){
         player.style.top = (player.offsetTop + moveSize)+"px";
     }
     if (touches.includes('ArrowRight')) {
-      animateScript()
+      animateScript("right");
       if(player.offsetLeft + player.offsetWidth < conteneurElt.offsetWidth)
         player.style.left = (player.offsetLeft + moveSize)+"px";
     }
     if (touches.includes('ArrowLeft')) {
+      animateScript("left");
       if(player.offsetLeft > 0)
         player.style.left = (player.offsetLeft - moveSize)+"px";
     }
