@@ -18,6 +18,7 @@
 
     <script src="js/script.js" charset="utf-8"></script>
     <script src="js/terrain.js" charset="utf-8"></script>
+    <script src="js/bombe.js" charset="utf-8"></script>
     <script src="js/player.js" charset="utf-8"></script>
 
   </body>

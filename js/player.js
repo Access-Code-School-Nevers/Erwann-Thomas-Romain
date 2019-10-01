@@ -23,4 +23,7 @@ document.addEventListener('keydown', function(event) {
     if(childRect.left > parentRect.left)
       player.style.left = (player.offsetLeft - moveSize)+"px";
   }
+  else if (event.code == 'Space') {
+    addBomb(player);
+  }
 });
