@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <div id="Conteneur">
 
+    </div>
 
 
     <script src="script.js" charset="utf-8"></script>
