@@ -18,7 +18,7 @@ function animateScript() {
       `-${position}px 0px`;
     //we use the ES6 template literal to insert the variable "position"
 
-    if (position < 955) {
+    if (position < 400) {
       position = position + diff;
     }
     //we increment the position by 40 each time
@@ -62,6 +62,7 @@ function loopMove(){
         player.style.top = (player.offsetTop + moveSize)+"px";
     }
     if (touches.includes('ArrowRight')) {
+      animateScript()
       if(player.offsetLeft + player.offsetWidth < conteneurElt.offsetWidth)
         player.style.left = (player.offsetLeft + moveSize)+"px";
     }
