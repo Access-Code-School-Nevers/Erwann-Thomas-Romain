@@ -22,14 +22,7 @@ display: flex;
 justify-content: center;
 }
 #player {
-<<<<<<< HEAD
-  z-index: 500;
-  position:absolute;
-  width: 20px;
-  height: 20px;
-=======
   z-index: 900;
->>>>>>> c21693ab10b27059f53d2f6329ddc8b6db58ae2f
   position:absolute;
   width: 40px;
   height: 40px;
@@ -40,12 +33,12 @@ justify-content: center;
 .mur-cassable{
   background-image: url("img/mur-cassable.png");
   background-size: cover;
-  display: none;
+  display: block;
 }
 .mur-incassable{
   background-image: url("img/mur-incassable.png");
   background-size: cover;
-  display: none;
+  display: block;
 }
 
 #bombe {

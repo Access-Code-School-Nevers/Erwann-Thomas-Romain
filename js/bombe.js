@@ -1,4 +1,4 @@
-function addBomb(perso) {
+function addBomb(perso,js) {
 	this.perso = perso;
 	var childBomb = document.createElement("div");
   childBomb.id = "bombe";
@@ -11,7 +11,8 @@ function addBomb(perso) {
     setTimeout(function() { // Changement du sprite bombe3
       childBomb.style.backgroundPosition = (allSize - (allSize*3)) + "px 0px";
       setTimeout(function() {
-				if (perso.id == 'player') player.canBomb = true;
+				
+				js.canBomb = true;
         childBomb.id = "explo";
 				childBomb.style.backgroundImage = "url('img/explo.png')";
 				childBomb.style.backgroundPosition = "0px 0px";
