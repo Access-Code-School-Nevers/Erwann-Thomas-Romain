@@ -1,7 +1,14 @@
 var conteneurElt = document.getElementById('conteneur');
+<<<<<<< HEAD
 var sectionElt = document.getElementById('bomberman')
 var largeur = 70;
 var hauteur = 35;
+=======
+var sectionElt = document.getElementById('bomberman');
+var largeur = 30;
+var hauteur = 15;
+
+>>>>>>> c21693ab10b27059f53d2f6329ddc8b6db58ae2f
 var allSize = 40;
 var numberWall = 12;
 var ennemy = [];
@@ -10,8 +17,8 @@ var murElt = document.createElement('div');
 var x = [0, 40, 80, 120, 160, 200];
 var y = [0, 40, 40, 40, 40];
 
-conteneurElt.style.width = (largeur * 16) + "px";
-conteneurElt.style.height = (hauteur * 16) + "px";
+conteneurElt.style.width = (largeur * 40) + "px";
+conteneurElt.style.height = (hauteur * 40) + "px";
 conteneurElt.style.borderRadius = "5px";
 
 sectionElt.style.display = "flex";
