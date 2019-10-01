@@ -36,4 +36,3 @@ if (cassable) {
 
   return conteneurElt;
 };
-creerMur();
