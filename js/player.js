@@ -16,16 +16,13 @@ function animateScript(direction) {
     document.getElementById("player").style.transform = "scaleX(-1)";
   } else if (direction == "right") {
     document.getElementById("player").style.transform = "scaleX(1)";
-  } else if (direction == "up") {
-    row =
-  } else if (direction == "down") {
+  }
 
-    }
 
   tID = setInterval(() => {
 
     document.getElementById("player").style.backgroundPosition =
-      `-${position}px ${row}px`;
+      `-${position}px 0px`;
     //we use the ES6 template literal to insert the variable "position"
 
     if (position < 400) {

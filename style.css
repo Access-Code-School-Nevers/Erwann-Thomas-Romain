@@ -21,6 +21,7 @@ body{
 display: flex;
 justify-content: center;
 }
+
 #player {
   z-index: 900;
   position:absolute;
