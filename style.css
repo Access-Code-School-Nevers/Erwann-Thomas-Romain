@@ -1,13 +1,10 @@
-#Conteneur{
-  position:relative;
-  height: 600px;
-  border: 25px solid grey;
-  width: 800px;
-  background-color: #000000;
+#conteneur{
+    border: 25px solid #41992a;
+    background-image: url("img/sol.png");
+    background-repeat: repeat;
 }
 
 #player {
   position:absolute;
   width: 50px;
   height: 50px;
-}
