@@ -22,13 +22,6 @@ display: flex;
 justify-content: center;
 }
 #player {
-<<<<<<< HEAD
-  z-index: 500;
-  position:absolute;
-  width: 80px;
-  height: 80px;
-  background: url('img/player_walk.png') 0px 0px;
-=======
   position:absolute;
   width: 40px;
   height: 40px;
@@ -40,7 +33,6 @@ justify-content: center;
   background-image: url("img/mur-cassable.png");
   background-size: cover;
   display: none;
->>>>>>> 458b6d79c6243ed1209dd8d0a0bddad0b62a956b
 }
 
 #bombe {
@@ -50,8 +42,8 @@ justify-content: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
 }
 
 #explo {
@@ -62,6 +54,6 @@ justify-content: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
 }

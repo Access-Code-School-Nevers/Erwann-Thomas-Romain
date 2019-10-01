@@ -2,9 +2,8 @@ var conteneurElt = document.getElementById('conteneur');
 var sectionElt = document.getElementById('bomberman')
 var largeur = 70;
 var hauteur = 35;
-var allSize = "40px";
 
-var allSize = 80;
+var allSize = 40;
 
 var ennemy = [];
 var wall = [];
@@ -21,10 +20,9 @@ sectionElt.style.justifyContent = "center";
 
 
 function creerMur( x, y, cassable){
-
   var murElt = document.createElement('div');
-  murElt.style.width = allSize;
-  murElt.style.height = allSize;
+  murElt.style.width = allSize + 'px';
+  murElt.style.height = allSize + 'px';
   conteneurElt.appendChild(murElt);
 
   y.style.top = "100px";
@@ -38,4 +36,3 @@ if (cassable) {
 
   return conteneurElt;
 };
-creerMur();
