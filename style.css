@@ -22,11 +22,18 @@ display: flex;
 justify-content: center;
 }
 #player {
+<<<<<<< HEAD
+  z-index: 500;
+  position:absolute;
+  width: 20px;
+  height: 20px;
+=======
   position:absolute;
   width: 40px;
   height: 40px;
   background: url('img/player_x.png') no-repeat 0px 0px;
   background-size: cover;
+>>>>>>> 458b6d79c6243ed1209dd8d0a0bddad0b62a956b
 }
 
 .mur-cassable{
