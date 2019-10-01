@@ -2,10 +2,13 @@ var conteneurElt = document.getElementById('conteneur');
 var sectionElt = document.getElementById('bomberman')
 var largeur = 70;
 var hauteur = 35;
-var allSize = "40px";
-
+var allSize = 40;
+var numberWall = 12;
 var ennemy = [];
 var wall = [];
+var murElt = document.createElement('div');
+var x = [0, 40, 80, 120, 160, 200];
+var y = [0, 40, 40, 40, 40];
 
 conteneurElt.style.width = (largeur * 16) + "px";
 conteneurElt.style.height = (hauteur * 16) + "px";
@@ -20,26 +23,26 @@ sectionElt.style.justifyContent = "center";
 
 function creerMur( x, y, cassable){
 
-  var murElt = document.createElement('div');
-  murElt.style.width = allSize;
-  murElt.style.height = allSize;
+  murElt.style.width = allSize + "px";
+  murElt.style.height = allSize + "px";
   murElt.style.position = "absolute";
-  murElt.style.top = x;
-  murElt.style.right = y;
   murElt.style.display = "block";
 if (cassable){
   murElt.classList.add("mur-cassable");
 } else {
   murElt.classList.add("mur-incassable");
 }
-
-conteneurElt.appendChild(murElt);
-
-
+  conteneurElt.appendChild(murElt);
   return conteneurElt;
 };
 
 
-creerMur("40px", "40px", true);
-creerMur("40px", "160px", true);
-creerMur("40px", "200px", true);
+for (var i = 0; i < x.length; i++) {
+  murElt.style.top = x[i] + "px";
+
+  for (var k = 0; k < array.length; k++) {
+    array[i]
+  }
+  })
+
+}

@@ -38,6 +38,11 @@ justify-content: center;
   background-size: cover;
   display: none;
 }
+.mur-incassable{
+  background-image: url("img/mur-incassable.png");
+  background-size: cover;
+  display: none;
+}
 
 #bombe {
   z-index: 800;
