@@ -12,5 +12,6 @@
 
 
     <script src="script.js" charset="utf-8"></script>
+    <script src="terrain.js" charset="utf-8"></script>
   </body>
 </html>
