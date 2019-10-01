@@ -1,5 +1,17 @@
+/* reset CSS */
+*{
+  margin: 0;
+  padding: 0;
+}
+/* body */
+body{
+  background-image: url("img/mur-texture.jpg");
+}
 #conteneur{
-    border: 25px solid #41992a;
+  top: 55px;
+    border: 25px solid #1b1b1b;
     background-image: url("img/sol.png");
     background-repeat: repeat;
+    position: absolute;
+    box-shadow: 0px 0px 10px 7px #adadad;
 }

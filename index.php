@@ -7,7 +7,7 @@
 
   </head>
   <body>
-<section id="Bomberman">
+<section id="bomberman">
   <div id="conteneur">
 
   </div>
