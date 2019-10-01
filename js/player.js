@@ -35,30 +35,38 @@ function animateScript() {
 var player = document.getElementById('player');
 var moveSize = 40;
 var parentRect = document.getElementById('conteneur').getBoundingClientRect();
-var childRect;
+var childRect = document.getElementById('player').getBoundingClientRect();
 
+var touches = [];
 
-document.addEventListener('keydown', function(event) {
-  childRect = document.getElementById('player').getBoundingClientRect();
-
-  if (event.code == 'ArrowUp') {
+setInterval(loopMove, 200);
+function loopMove(){
+  if (touches.includes('ArrowUp')) {
     if(childRect.top > parentRect.top)
       player.style.top = (player.offsetTop - moveSize)+"px";
   }
-  else if (event.code == 'ArrowRight') {
-    if(childRect.right < parentRect.right)
-      player.style.left = (player.offsetLeft + moveSize)+"px";
-      animateScript();
-  }
-  else if (event.code == 'ArrowDown') {
+  if (touches.includes('ArrowDown')) {
     if(childRect.bottom < parentRect.bottom)
       player.style.top = (player.offsetTop + moveSize)+"px";
   }
-  else if (event.code == 'ArrowLeft') {
-    if(childRect.left > parentRect.left)
-      player.style.left = (player.offsetLeft - moveSize)+"px";
+  if (touches.includes('ArrowRight')) {
+    if(childRect.right < parentRect.right)
+      player.style.left = (player.offsetLeft + moveSize)+"px";
   }
-  else if (event.code == 'Space') {
-    addBomb(player);
+  if (touches.includes('ArrowLeft')) {
+   if(childRect.left > parentRect.left)
+     player.style.left = (player.offsetLeft - moveSize)+"px";
   }
-});
+}
+function bomb() {
+  if (touches.includes('Space')) {
+    var newBomb = {};
+    newBomb.__proto__ = addBomb.prototype;
+    newBomb.constructor = addBomb;
+    newBomb.constructor(player);
+  }
+}
+
+document.addEventListener('keydown', function(event) { touches.push(event.code); });
+document.addEventListener('keyup', function(event) { touches = touches.filter(e => e !== event.code); });
+document.addEventListener('keypress', function(event) { bomb() });
