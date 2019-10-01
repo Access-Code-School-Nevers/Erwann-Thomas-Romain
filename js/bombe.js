@@ -1,49 +1,29 @@
 function addBomb(perso) {
+	this.perso = perso;
 	var childBomb = document.createElement("div");
   childBomb.id = "bombe";
-  childBomb.style.left = "0px";
-  childBomb.style.top = "0px";
-	perso.appendChild(childBomb);
-  poser(childBomb);
-}
+  childBomb.style.left = perso.style.left;
+  childBomb.style.top = perso.style.top;
+	conteneurElt.appendChild(childBomb);
 
-const poseBombe = {
-  bombe: null,
-  startExplo: function() { // Début de l'explosion
-    setTimeout(function() { // Changement du sprite bombe2
-      bombe.style.backgroundImage = "url('img/bombe2.png')";
-      setTimeout(function() { // Changement du sprite bombe3
-        bombe.style.backgroundImage = "url('img/bombe3.png')";
-        setTimeout(function() {
-          const boom = Object.create(explosion);
-          boom.explo = bombe;
-          bombe.id = "explo";
-          boom.startSmoke();
-					
-        }, 700);
+  setTimeout(function() { // Changement du sprite bombe2
+    childBomb.style.backgroundPosition = (allSize - (allSize*2)) + "px 0px";
+    setTimeout(function() { // Changement du sprite bombe3
+      childBomb.style.backgroundPosition = (allSize - (allSize*3)) + "px 0px";
+      setTimeout(function() {
+        childBomb.id = "explo";
+					childBomb.style.backgroundImage = "url('img/explo.png')";
+					childBomb.style.backgroundPosition = "0px 0px";
+					setTimeout(function() {
+						 childBomb.style.backgroundPosition = (allSize - (allSize*2)) + "px 0px";
+						 setTimeout(function() {
+								 childBomb.style.backgroundPosition = (allSize - (allSize*3)) + "px 0px";
+								 setTimeout(function() {
+									 childBomb.remove();
+								 }, 200);
+						 }, 200);
+					 }, 200);
       }, 700);
     }, 700);
-  }
-}
-
-const explosion = {
-  explo: null,
-  startSmoke: function() {
-    explo.style.backgroundImage = "url('img/explo1.png')";
-     setTimeout(function() {
-       explo.style.backgroundImage = "url('img/explo2.png')";
-       setTimeout(function() {
-         explo.style.backgroundImage = "url('img/explo3.png')";
-         setTimeout(function() {
-           explo.remove();
-         }, 200);
-       }, 200);
-     }, 200);
-  }
-}
-
-function poser(theBomb) {
-  const bombe = Object.create(poseBombe);
-  bombe.bombe = theBomb;
-  bombe.startExplo();
+  }, 700);
 }

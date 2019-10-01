@@ -18,22 +18,17 @@ body{
 }
 
 #player {
-<<<<<<< HEAD
   z-index: 500;
   position:absolute;
-  width: 20px;
-  height: 20px;
-=======
-  /* position:absolute; */
   width: 80px;
   height: 80px;
   background: url('img/player_walk.png') 0px 0px;
->>>>>>> 7d3a50b8d8837b809bc7be265b1527b8f48b9aee
 }
 
 #bombe {
   z-index: 800;
-  background-image: url('img/bombe1.png');
+  background-image: url('img/bombe.png');
+  background-position: '0px' '0px';
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -43,7 +38,9 @@ body{
 
 #explo {
   z-index: 999;
-  background-image: url('img/explo1.png');
+  background-image: url('img/explo.png');
+  background-position: '0px' '0px';
+  background-position: '0px' '0px';
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;

@@ -58,6 +58,9 @@ document.addEventListener('keydown', function(event) {
       player.style.left = (player.offsetLeft - moveSize)+"px";
   }
   else if (event.code == 'Space') {
-    addBomb(player);
+    var newBomb = {};
+    newBomb.__proto__ = addBomb.prototype;
+    newBomb.constructor = addBomb;
+    newBomb.constructor(player);
   }
 });

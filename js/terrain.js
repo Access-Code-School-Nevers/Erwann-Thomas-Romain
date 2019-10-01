@@ -3,6 +3,8 @@ var sectionElt = document.getElementById('bomberman')
 var largeur = 70;
 var hauteur = 35;
 
+var allSize = 80;
+
 var ennemy = [];
 var wall = [];
 
