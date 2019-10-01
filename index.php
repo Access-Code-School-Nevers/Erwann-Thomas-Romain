@@ -9,7 +9,9 @@
   <body>
 <section id="bomberman">
   <div id="conteneur">
-
+    <div id="player">
+      <img src="./img/don_idle.png" alt="player">
+    </div>
   </div>
 </section>
 
@@ -17,5 +19,7 @@
 
     <script src="js/script.js" charset="utf-8"></script>
     <script src="js/terrain.js" charset="utf-8"></script>
+    <script src="js/player.js" charset="utf-8"></script>
+
   </body>
 </html>
