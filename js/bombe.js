@@ -1,9 +1,9 @@
 function addBomb(perso) {
 	var childBomb = document.createElement("div");
   childBomb.id = "bombe";
-  childBomb.style.left = perso.style.left;
-  childBomb.style.top = perso.style.top;
-	document.getElementsByTagName("body")[0].appendChild(childBomb);
+  childBomb.style.left = "0px";
+  childBomb.style.top = "0px";
+	perso.appendChild(childBomb);
   poser(childBomb);
 }
 
@@ -11,7 +11,7 @@ const poseBombe = {
   bombe: null,
   startExplo: function() { // Début de l'explosion
     setTimeout(function() { // Changement du sprite bombe2
-      bombe.style.background = "url('img/bombe2.png')";
+      bombe.style.backgroundImage = "url('img/bombe2.png')";
       setTimeout(function() { // Changement du sprite bombe3
         bombe.style.backgroundImage = "url('img/bombe3.png')";
         setTimeout(function() {
@@ -19,8 +19,7 @@ const poseBombe = {
           boom.explo = bombe;
           bombe.id = "explo";
           boom.startSmoke();
-
-
+					
         }, 700);
       }, 700);
     }, 700);
@@ -37,7 +36,6 @@ const explosion = {
          explo.style.backgroundImage = "url('img/explo3.png')";
          setTimeout(function() {
            explo.remove();
-           //explosion
          }, 200);
        }, 200);
      }, 200);
