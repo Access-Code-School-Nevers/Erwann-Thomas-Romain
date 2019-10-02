@@ -57,7 +57,6 @@ var touches = [];
 
 setInterval(loopMove, 20);
 function loopMove(){
-<<<<<<< HEAD:old/js/player.js
   var newY = player.offsetTop;
   var newX = player.offsetLeft;
 
@@ -69,31 +68,6 @@ function loopMove(){
   if (touches.includes('ArrowRight')) newX += moveSize;
   if (touches.includes('ArrowLeft')) newX -= moveSize;
   if ((bombs.filter(e => e.offsetTop == newY && e.offsetLeft == newX)).length == 0) if ((wall.filter(e => newX < e.offsetLeft + e.offsetWidth && newX + player.offsetWidth > e.offsetLeft && newY < e.offsetTop + e.offsetHeight && player.offsetHeight + newY > e.offsetTop)).length == 0) if(newX >= 0 && newX + allSize <= conteneurElt.offsetWidth) player.style.left = newX+"px";
-=======
-  if (nextMove == 0) {
-    nextMove = 50;
-    if (touches.includes('ArrowUp')) {
-      if(player.offsetTop > 0)
-        player.style.top = (player.offsetTop - moveSize)+"px";
-    }
-    if (touches.includes('ArrowDown')) {
-      if(player.offsetTop + player.offsetHeight < conteneurElt.offsetHeight)
-        player.style.top = (player.offsetTop + moveSize)+"px";
-    }
-    if (touches.includes('ArrowRight')) {
-      animateScript("right");
-      if(player.offsetLeft + player.offsetWidth < conteneurElt.offsetWidth)
-        player.style.left = (player.offsetLeft + moveSize)+"px";
-    }
-    if (touches.includes('ArrowLeft')) {
-      animateScript("left");
-      if(player.offsetLeft > 0)
-        player.style.left = (player.offsetLeft - moveSize)+"px";
-    }
-  } else {
-    nextMove--;
-  }
->>>>>>> 6a42adb7e1220653a53f72b7a446728c760245bd:js/player.js
 }
 function bomb() {
   canBomb = false;
