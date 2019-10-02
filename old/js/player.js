@@ -44,41 +44,27 @@ function animateScript() {
 // Movements
 var canBomb = true;
 var player = document.getElementById('player');
-var moveSize = 40;
+var moveSize = 4;
 
 var touches = [];
 
-var nextMove = 50;
-setInterval(loopMove, 1);
+setInterval(loopMove, 20);
 function loopMove(){
-  if (nextMove == 0) {
-    nextMove = 50;
-    if (touches.includes('ArrowUp')) {
-      if(player.offsetTop > 0)
-        player.style.top = (player.offsetTop - moveSize)+"px";
-    }
-    if (touches.includes('ArrowDown')) {
-      if(player.offsetTop + player.offsetHeight < conteneurElt.offsetHeight)
-        player.style.top = (player.offsetTop + moveSize)+"px";
-    }
-    if (touches.includes('ArrowRight')) {
-      if(player.offsetLeft + player.offsetWidth < conteneurElt.offsetWidth)
-        player.style.left = (player.offsetLeft + moveSize)+"px";
-    }
-    if (touches.includes('ArrowLeft')) {
-      if(player.offsetLeft > 0)
-        player.style.left = (player.offsetLeft - moveSize)+"px";
-    }
-  } else {
-    nextMove--;
-  }
+  var newY = player.offsetTop;
+  var newX = player.offsetLeft;
+
+  if (touches.includes('ArrowUp')) newY -= moveSize;
+  if (touches.includes('ArrowDown')) newY += moveSize;
+  if ((bombs.filter(e => e.offsetTop == newY && e.offsetLeft == newX)).length == 0) if ((wall.filter(e => newX < e.offsetLeft + e.offsetWidth && newX + player.offsetWidth > e.offsetLeft && newY < e.offsetTop + e.offsetHeight && player.offsetHeight + newY > e.offsetTop)).length == 0) if(newY >= 0 && newY + allSize <= conteneurElt.offsetHeight) player.style.top = newY+"px";
+
+  newY = player.offsetTop;
+  if (touches.includes('ArrowRight')) newX += moveSize;
+  if (touches.includes('ArrowLeft')) newX -= moveSize;
+  if ((bombs.filter(e => e.offsetTop == newY && e.offsetLeft == newX)).length == 0) if ((wall.filter(e => newX < e.offsetLeft + e.offsetWidth && newX + player.offsetWidth > e.offsetLeft && newY < e.offsetTop + e.offsetHeight && player.offsetHeight + newY > e.offsetTop)).length == 0) if(newX >= 0 && newX + allSize <= conteneurElt.offsetWidth) player.style.left = newX+"px";
 }
 function bomb() {
   canBomb = false;
-  var newBomb = {};
-  newBomb.__proto__ = addBomb.prototype;
-  newBomb.constructor = addBomb;
-  newBomb.constructor(player,this);
+  new Bombe(player, this).poseBomb();
 }
 document.addEventListener('keypress', function(event) {
   if (event.code == 'Space') if (canBomb) bomb();

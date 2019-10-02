@@ -5,9 +5,9 @@ var largeur = 30;
 var hauteur = 15;
 
 var allSize = 40;
-var numberWallX = 12;
-var numberWallY = 12;
+var numberWall = 150;
 var ennemy = [];
+var bombs = [];
 var wall = [];
 
 conteneurElt.style.width = (largeur * 40) + "px";
@@ -20,26 +20,28 @@ sectionElt.style.justifyContent = "center";
 
 function creerMur(x, y, cassable){
   if (!(x == 0 && y == 0) && !(x == largeur*allSize-allSize && y == hauteur*allSize-allSize) && !(x == 0 && y == hauteur*allSize-allSize) && !(x == largeur*allSize-allSize && y == 0)) {
-    var murElt = document.createElement('div');
+    if ((wall.filter(e => x < e.offsetLeft + e.offsetWidth && x + e.offsetWidth > e.offsetLeft && y < e.offsetTop + e.offsetHeight && e.offsetHeight + y > e.offsetTop)).length == 0) {
+      var murElt = document.createElement('div');
 
-    murElt.style.width = allSize + "px";
-    murElt.style.height = allSize + "px";
+      murElt.style.width = allSize + "px";
+      murElt.style.height = allSize + "px";
 
-    murElt.style.position = "absolute";
+      murElt.style.position = "absolute";
 
-    murElt.style.left = x + "px";
-    murElt.style.top = y + "px";
+      murElt.style.left = x + "px";
+      murElt.style.top = y + "px";
 
-    if (cassable) murElt.classList.add("mur-cassable"); else murElt.classList.add("mur-incassable");
-    conteneurElt.appendChild(murElt);
-    wall.push(murElt);
+      if (cassable) murElt.classList.add("mur-cassable"); else murElt.classList.add("mur-incassable");
+      conteneurElt.appendChild(murElt);
+      wall.push(murElt);
+      return true;
+    }
   }
+  creerMur(rnd(largeur) * allSize, rnd(hauteur) * allSize, rnd(2)-1);
 };
 
-for (var x = 0; x < numberWallX; x++) {
-  for (var y = 0; y < numberWallY; y++) {
+for (var i = 0; i < numberWall; i++) {
     creerMur(rnd(largeur) * allSize, rnd(hauteur) * allSize, rnd(2)-1);
-  }
 }
 
 function rnd(max) {

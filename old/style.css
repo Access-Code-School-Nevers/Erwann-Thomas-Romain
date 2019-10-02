@@ -1,0 +1,65 @@
+/* reset CSS */
+*{
+  margin: 0;
+  padding: 0;
+}
+/* body */
+body{
+  background-image: url("img/mur-texture.jpg");
+}
+#conteneur{
+  top: 55px;
+  /* border: 25px solid #1b1b1b; */
+  background-image: url("img/sol.png");
+  background-size: 32px;
+  background-repeat: repeat;
+  /* box-shadow: 0px 0px 10px 7px #adadad; */
+  position:relative;
+}
+
+#bomberman{
+display: flex;
+justify-content: center;
+}
+#player {
+  z-index: 900;
+  position:absolute;
+  width: 40px;
+  height: 40px;
+  background: url('img/player_x.png') no-repeat 0px 0px;
+  background-size: cover;
+}
+
+.mur-cassable{
+  background-image: url("img/mur-cassable.png");
+  background-size: cover;
+  display: block;
+}
+.mur-incassable{
+  background-image: url("img/mur-incassable.png");
+  background-size: cover;
+  display: block;
+}
+
+#bombe {
+  z-index: 800;
+  background-image: url('img/bombe.png');
+  background-position: '0px' '0px';
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+}
+
+#explo {
+  z-index: 999;
+  background-image: url('img/explo.png');
+  background-position: '0px' '0px';
+  background-position: '0px' '0px';
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+}
